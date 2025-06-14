@@ -5,9 +5,9 @@ import re
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello, World!!!'
+#@app.route('/')
+#def home():
+#    return 'Hello, World!!!'
 
 @app.route('/result')
 def result():
@@ -55,7 +55,7 @@ def HintsHandler():
     logging.info("wordlength %s [%s] [%s]" % (_wordlength, _letters, _answers))
     return render_template("answers.htm", answers=_answers)
 
-@app.route('/4p1w', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def MainHandler():
     print("4p1w handler")
     return render_template("index.htm", wordlength="", letters="", filters="")
