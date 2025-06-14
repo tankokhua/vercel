@@ -17,6 +17,7 @@ def about():
 
 @app.route('/gethints', methods=['GET', 'POST'])
 def HintsHandler():
+    print("gethints handler")
     _wordlength = request.form.get("wordlength").strip()
     _letters    = request.form.get("letters").lower().replace(' ', '', 12)
     _filters    = request.form.get("filters").lower().replace(' ', '', 12)
@@ -53,4 +54,5 @@ def HintsHandler():
 
 @app.route('/4p1w', methods=['GET', 'POST'])
 def MainHandler():
+    print("4p1w handler")
     return render_template("index.htm", wordlength="", letters="", filters="")
