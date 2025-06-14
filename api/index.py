@@ -14,3 +14,7 @@ def result():
 @app.route('/about')
 def about():
     return 'About'
+
+@app.route('/4p1w', methods=['GET', 'POST'])
+def MainHandler():
+    return render_template("index.htm", wordlength="", letters="", filters="")
