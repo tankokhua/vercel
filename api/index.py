@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask import send_from_directory
 import os
 import logging
 import re
@@ -50,3 +51,7 @@ def HintsHandler():
 def MainHandler():
     print("4p1w handler")
     return render_template("index.htm", wordlength="", letters="", filters="")
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
